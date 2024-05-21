@@ -31,12 +31,12 @@ const LEGACY_API = "/api";
 
 export default {
   name: "Radarr",
+  components: {
+    Generic,
+  },
   mixins: [service],
   props: {
     item: Object,
-  },
-  components: {
-    Generic,
   },
   data: () => {
     return {
@@ -46,13 +46,13 @@ export default {
       serverError: false,
     };
   },
-  created: function () {
-    this.fetchConfig();
-  },
   computed: {
     apiPath() {
       return this.item.legacyApi ? LEGACY_API : V3_API;
     },
+  },
+  created: function () {
+    this.fetchConfig();
   },
   methods: {
     fetchConfig: function () {

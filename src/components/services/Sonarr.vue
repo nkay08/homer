@@ -32,17 +32,12 @@ const LEGACY_API = "/api";
 
 export default {
   name: "Sonarr",
-  mixins: [service],
-  props: {
-    item: Object,
-  },
   components: {
     Generic,
   },
-  computed: {
-    apiPath() {
-      return this.item.legacyApi ? LEGACY_API : V3_API;
-    },
+  mixins: [service],
+  props: {
+    item: Object,
   },
   data: () => {
     return {
@@ -51,6 +46,11 @@ export default {
       errors: null,
       serverError: false,
     };
+  },
+  computed: {
+    apiPath() {
+      return this.item.legacyApi ? LEGACY_API : V3_API;
+    },
   },
   created: function () {
     this.fetchConfig();

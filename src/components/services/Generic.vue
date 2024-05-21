@@ -23,14 +23,14 @@
             <div class="media-content">
               <slot name="content">
                 <p class="title is-4">{{ item.name }}</p>
-                <p class="subtitle is-6" v-if="item.subtitle">
+                <p v-if="item.subtitle" class="subtitle is-6">
                   {{ item.subtitle }}
                 </p>
               </slot>
             </div>
             <slot name="indicator" class="indicator"></slot>
           </div>
-          <div class="tag" :class="item.tagstyle" v-if="item.tag">
+          <div v-if="item.tag" class="tag" :class="item.tagstyle">
             <strong class="tag-text">#{{ item.tag }}</strong>
           </div>
         </div>

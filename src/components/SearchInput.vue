@@ -2,8 +2,8 @@
   <div class="search-bar">
     <label for="search" class="search-label"></label>
     <input
-      type="text"
       ref="search"
+      type="text"
       :value="value"
       @input.stop="search($event.target.value)"
       @keyup.enter.exact="open()"
@@ -42,6 +42,9 @@ export default {
       this.focus();
     }
   },
+  beforeUnmount() {
+    document.removeEventListener("keydown", this._keyListener);
+  },
   methods: {
     open: function (target = null) {
       if (!this.$refs.search.value) {
@@ -74,9 +77,6 @@ export default {
       this.setSearchURL(value);
       this.$emit("input", value.toLowerCase());
     },
-  },
-  beforeUnmount() {
-    document.removeEventListener("keydown", this._keyListener);
   },
 };
 </script>

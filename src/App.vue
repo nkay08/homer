@@ -1,7 +1,7 @@
 <template>
   <div
-    id="app"
     v-if="config"
+    id="app"
     :class="[
       `theme-${config.theme}`,
       `page-${currentPage}`,
@@ -35,16 +35,16 @@
         @navbar-toggle="showMenu = !showMenu"
       >
         <DarkMode
+          :default-value="config.defaults.colorTheme"
           @updated="isDark = $event"
-          :defaultValue="this.config.defaults.colorTheme"
         />
 
         <SettingToggle
-          @updated="vlayout = $event"
           name="vlayout"
           icon="fa-list"
-          iconAlt="fa-columns"
-          :defaultValue="this.config.defaults.layout == 'columns'"
+          icon-alt="fa-columns"
+          :default-value="config.defaults.layout == 'columns'"
+          @updated="vlayout = $event"
         />
 
         <SearchInput
@@ -76,8 +76,8 @@
             <template v-for="(group, groupIndex) in services">
               <h2
                 v-if="group.name"
-                class="column is-full group-title"
                 :key="`header-${groupIndex}`"
+                class="column is-full group-title"
               >
                 <i v-if="group.icon" :class="['fa-fw', group.icon]"></i>
                 <div v-else-if="group.logo" class="group-logo media-left">
@@ -103,9 +103,9 @@
             class="columns is-multiline layout-vertical"
           >
             <div
-              :class="['column', `is-${12 / config.columns}`]"
               v-for="(group, groupIndex) in services"
               :key="groupIndex"
+              :class="['column', `is-${12 / config.columns}`]"
             >
               <h2 v-if="group.name" class="group-title">
                 <i v-if="group.icon" :class="['fa-fw', group.icon]"></i>
@@ -131,8 +131,8 @@
     <footer class="footer">
       <div class="container">
         <div
-          class="content has-text-centered"
           v-if="config.footer"
+          class="content has-text-centered"
           v-html="config.footer"
         ></div>
       </div>

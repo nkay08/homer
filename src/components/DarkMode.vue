@@ -1,8 +1,8 @@
 <template>
   <a
-    @click="toggleTheme()"
     aria-label="Toggle dark mode"
     class="navbar-item is-inline-block-mobile"
+    @click="toggleTheme()"
   >
     <i
       :class="`${faClasses[mode]}`"
