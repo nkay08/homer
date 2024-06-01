@@ -1,0 +1,94 @@
+
+// Theme colors
+.theme-neon.light {
+    --highlight-primary: #B5FF57;
+    --highlight-secondary: transparent;
+    --highlight-hover: #e7e4e4;
+    --background: #ffffff;
+    --card-background: #ffffff;
+    --text: #363636;
+    --text-header: #1F2229;
+    --text-title: #303030;
+    --text-subtitle: #424242;
+    --card-shadow: rgba(46, 39, 39, 0.1);
+    --link: #3273dc;
+    --link-hover: #144aa2;
+    --background-image: none;
+}
+
+.theme-neon.dark {
+    --highlight-primary: #B5FF57;
+    --highlight-secondary: transparent;
+    --highlight-hover: #1F2229;
+    --background: #14161A;
+    --card-background: #14161A; 
+    --text: #eaeaea;
+    --text-header: #ffffff;
+    --text-title: #fafafa;
+    --text-subtitle: #768198;
+    --card-shadow: rgba(46, 39, 39, 0.1);
+    --link: #3273dc;
+    --link-hover: #144aa2;
+    --background-image: none;
+}
+
+// theme 
+.theme-neon {
+    --subtitle-color: #768198;
+    --border-radius: 0.75em;
+
+    .first-line {
+        padding-top: 25px;
+        background-color: transparent;
+
+        .headline {
+            color: var(--subtitle-color);
+            font-size: 1em;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .dashboard-title::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            width: 4em;
+            height: .25rem;
+            background-color: var(--highlight-primary);
+            border-radius: 2px;
+        }
+    }
+
+    #bighead .navbar a {
+        color: var(--subtitle-color);
+
+        &:hover {
+            color: var(--text-header);
+            border-radius: var(--border-radius);
+            background-color: transparent;
+        }
+    }
+
+    .card {
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        border: 1px solid hsl(221,14%,24%);
+        border-radius: var(--border-radius);
+
+        .message {
+            border: 1px solid hsl(221,14%,24%);
+            border-radius: var(--border-radius);
+        }
+    }
+
+    .layout-vertical .card {
+        margin-bottom: 0.75em;
+    }
+
+    .message-body {
+        background-color: transparent;
+    }
+
+}

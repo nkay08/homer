@@ -1,0 +1,80 @@
+
+// Theme colors
+.light {
+    --highlight-primary: #3367d6;
+    --highlight-secondary: #4285f4;
+    --highlight-hover: #5a95f5;
+    --background: #f5f5f5;
+    --card-background: #ffffff;
+    --text: #363636;
+    --text-header: #ffffff;
+    --text-title: #303030;
+    --text-subtitle: #424242;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --link: #3273dc;
+    --link-hover: #363636;
+    --background-image: none;
+}
+
+.dark {
+    --highlight-primary: #3367d6;
+    --highlight-secondary: #4285f4;
+    --highlight-hover: #5a95f5;
+    --background: #131313;
+    --card-background: #202127;
+    --text: #eaeaea;
+    --text-header: #ffffff;
+    --text-title: #fafafa;
+    --text-subtitle: #b6b6b6;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --link: #3273dc;
+    --link-hover: #144aa2;
+    --background-image: none;
+}
+
+#app {
+    --highlight-red: #FF204E;
+    --highlight-pink: #FF6392;
+    --highlight-orange: #FF8A08;
+    --highlight-green: #22A699;
+    --highlight-purple: #711DB0;
+    
+
+    .highlight-primary {
+        --highlight-color: var(--highlight-primary);
+    }
+
+    .highlight-green {
+        --highlight-color: var(--highlight-green);
+    }
+
+    .highlight-orange {
+        --highlight-color: var(--highlight-orange); 
+    }
+
+    .highlight-pink {
+        --highlight-color: var(--highlight-pink); 
+    }
+
+    .highlight-purple {
+        --highlight-color: var(--highlight-purple); 
+    }
+
+    .highlight-red {
+        --highlight-color: var(--highlight-red); 
+    }
+
+    *[class^="highlight-"], *[class*=" highlight-"] {
+        i {
+            color: var(--highlight-color);
+        }
+
+        .card {
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            border: 1px solid var(--highlight-color);;
+        }
+    }
+}
